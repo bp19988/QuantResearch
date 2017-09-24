@@ -1,7 +1,6 @@
 library(tidyquant)
 library(astsa)
 
-
 SPX <- getSymbols("^GSPC",auto.assign = FALSE, from = "2015-01-01")
 SPX <- dailyReturn(SPX)
 SPXret <- SPX$GSPC.Close
@@ -19,4 +18,3 @@ SPX <- getSymbols("^GSPC", auto.assign = FALSE, from = "2010-01-01")
 SPXret <- SPX$GSPC.Close
 SPXret <- ts(SPXret, frequency=365, start=c(2010,4))
 sarima.for(SPXret, 5, 1, 1, 3)
-
